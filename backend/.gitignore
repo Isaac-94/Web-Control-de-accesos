@@ -1,2 +1,5 @@
-index1.js
 .env
+.env.example
+.env.local
+.env.staging
+.index1.js
