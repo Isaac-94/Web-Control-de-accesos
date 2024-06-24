@@ -112,7 +112,54 @@ npm run serve
 Una vez que el backend y el frontend estén en ejecución, puedes acceder a la interfaz web en http://localhost:8080 (o el puerto que Vue.js indique).
 ## Gestión de Usuarios
 - Crear Usuario: Accede a la página de registro en http://localhost:8080/SignUp y completa el formulario.
+![imagen web](imagenes/signup.png)
+
+
 - Iniciar Sesión: Utiliza tus credenciales para iniciar sesión en http://localhost:8080/Login.
+![imagen web](imagenes/signin.png)
+
+## Gestión de Usuarios de Acceso
+Esta sección detalla cómo crear, editar y eliminar usuarios de acceso mediante la interfaz web del sistema de Control de Accesos. Las operaciones se realizan a través de formularios en el frontend, los cuales se comunican con el backend utilizando la API REST.
+
+### Creación de Usuarios
+Para crear un nuevo usuario de acceso:
+
+- Accede a la página de creación de usuarios con el boton de la barra superior y
+Completa el formulario:
+![imagen web](imagenes/home.png)
+- En esta pantalla se completan los campos
+![imagen web](imagenes/adduser.png)
+
+- Usuario: Nombre del usuario (debe ser único).
+- Código (6 dígitos): Código de acceso del usuario (opcional, pero debe ser un número de 6 dígitos si se proporciona).
+- Tarjeta: Número de tarjeta RFID (opcional, pero debe ser un número si se proporciona).
+- Autorización: Selecciona el tipo de acceso (puerta, deshabilitado, cofre).
+- Validaciones:
+
+*El nombre de usuario debe ser único.
+Al menos uno de los campos Código o Tarjeta debe ser proporcionado.
+Si se proporciona Código, debe tener exactamente 6 dígitos numéricos.
+Si se proporciona Tarjeta, debe ser numérico y único.*
+Enviar el formulario:
+
+- Presiona el botón Guardar.
+Si el formulario es válido, el usuario será creado y se redirige a la pantalla de home.
+
+### Editar y eliminar Usuarios
+- En la pantalla de home, al lado de cada usuario se muestran dos botones, uno para editar el usuario selecionado y otro para eliminar.
+![imagen web](imagenes/home.png)
+- Al presionar el boton editar, redirige a la siguiente pantalla, donde se deben editar los datos que se desee.
+![imagen web](imagenes/edit.png)
+- Para eliminar un usuario se debe presionar el boton que indica la eliminacion de usuario, y se abrirá un promp para aceptar o cancelar la eliminación.
+### Visualizar Registros
+- Para visualizar los registros se debe presionar el boton "Registros" de la barra superior
+![imagen web](imagenes/home.png)
+- Los registros se ordenan por fecha, de mas recientes a mas antiguos. Se puede filtrar por codigo de tarjeta o codigo de ingreso.
+![imagen web](imagenes/registers.png)
+
+
+
+
 
 ## Comunicación MQTT
 Los dispositivos ESP32 se comunicarán con el servidor mediante los siguientes tópicos:
